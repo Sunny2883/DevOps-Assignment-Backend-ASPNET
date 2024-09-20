@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:396608771618:task-definition/Assignment_family_1:87",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:396608771618:task-definition/Assignment_family_1:104",
     "containerDefinitions": [
         {
             "name": "Assignment_task_1",
@@ -59,8 +59,8 @@
     "family": "Assignment_family_1",
     "taskRoleArn": "arn:aws:iam::396608771618:role/ecsTaskRolenew",
     "executionRoleArn": "arn:aws:iam::396608771618:role/ecsTaskExecutionRole2",
-    "networkMode": "bridge",
-    "revision": 87,
+    "networkMode": "awsvpc",
+    "revision": 104,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -89,17 +89,23 @@
             "name": "ecs.capability.secrets.ssm.environment-variables"
         },
         {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EXTERNAL",
-        "EC2"
+        "EC2",
+        "FARGATE"
     ],
     "cpu": "256",
     "memory": "512",
-    "registeredAt": "2024-09-17T09:25:10.239Z",
+    "registeredAt": "2024-09-20T05:51:03.877Z",
     "registeredBy": "arn:aws:iam::396608771618:user/Assignment_1",
     "tags": []
 }
